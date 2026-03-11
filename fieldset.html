@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* jika langsung seleksi bagian body, jadi semua bagian body akan berubah */
+        body {
+            font-family: Arial, sans-serif; 
+        }
+        /* Jadi karena identitas berada di class kita panggil menggunakan .identitas (titk menandakan class) */
+        .identitas{
+            color: red;
+        }
+
+        /*Jadi jika ingin membuat tulisan berbeda beda kita bisa membuat class baru*/
+        /* memudahkan lagi jika banyak kelas yag menggunakan kata yang sama  */
+        /* dengan memberi spasi di class lita dapat memudahkan untuk memberi variasi*/
+        .merah {
+            color: gold;
+        }
+        .tinggi {
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        .rendah {
+            color: #000;
+            text-transform: lowercase;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <fieldset>
+            <!-- legend agar dia tidak masuk dalam form -->
+            <legend>Identitas</legend>
+            <div class="identitas">
+                <label for="username">Username:</label>
+                <input type="username" placeholder="username" name="username"> <br>
+                <label for="password">Password :</label>
+                <input type="password" name="password" placeholder="password">
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Alamat</legend>
+            <div class="alamat">
+                <label for="username">Username:</label>
+                <input type="username" placeholder="username" name="username"> <br>
+                <label for="password">Password :</label>
+                <input type="password" name="password" placeholder="password">
+            </div>
+    </fieldset>
+    </form>
+    <div id="hero">
+        <h1 class="merah tinggi"> Selamat Datang</h1>
+        <h1 class="merah rendah"> Selamat Datang</h1>
+        <h1 class="merah ">Selamat Datang</h1>
+    </div>
+</body>
+</html>

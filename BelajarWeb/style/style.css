@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.profile-left {
+    box-shadow: 0 2px 8px 0 #a04141;
+    border-radius: 5px;
+    padding-top: 20px;
+    margin-top: 20px;
+    padding: 8px;
+}
+.profile-left p {
+ background-color: aqua; 
+}
+
+.logo {
+width: 50%;
+}
+.nav{
+    background-color: #00a2c6;
+    padding: 20px;
+}
+
+.nav a{
+    list-style-type: none;
+    margin-right: 20px; /*margin untuk membuat jarak antar kata */
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+}
+
+.nav button {
+    background-color: #ffffff;
+    padding : 10px;
+    background: transparent;
+}
+.jumbotron {
+    font-size: 20px;
+    padding : 50px;
+    background-color: #00c8eb;
+    text-align: center; /* memposisikan teks rata tengah */
+    color: white;
+}
+.box p{
+    border: solid 2px rgb(111, 15, 121);
+    text-align: justify; /*untuk menambahkan spasi antar kalimat*/
+    padding: 20px; /*memberikan jarak antara teks dan batas*/
+}
+img {
+    width: 100%;
+    max-width: 60%;
+}
+
+.left-content {
+    text-align: center;
+    background-color: #6d3232;
+    line-height: 300px;
+    width: 50%;
+    float : right ;
+}
+
+.right-content {
+    text-align: center;
+    background-color: #2eb6a0;
+    width: 50%;
+    line-height: 300px;
+    float: left;
+}

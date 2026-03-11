@@ -1,0 +1,228 @@
+
+/* --- RESET & GLOBAL VARIABLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #2c3e50; /* Dark Blue - Professional */
+    --secondary-color: #3498db; /* Blue accent */
+    --bg-color: #f4f6f8;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --text-light: #666;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Sticky Header */
+    top: 0;
+    z-index: 1000;
+    padding: 0 20px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Tombol Profil Dicoding (Syarat Wajib) */
+.dicoding-link {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.dicoding-link:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- JUMBOTRON / HERO --- */
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- MAIN LAYOUT (FLEXBOX) --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Syarat Wajib: Flexbox */
+    gap: 30px;
+    flex-flow: row wrap;
+}
+
+/* Content Area (Left/Center) */
+#content {
+    flex: 3; /* Mengambil 3 bagian ruang */
+    min-width: 0; /* Mencegah overflow flex item */
+}
+
+/* Sidebar / Aside (Right) */
+aside {
+    flex: 1; /* Mengambil 1 bagian ruang */
+    min-width: 300px;
+}
+
+/* --- CARDS & ARTICLES --- */
+article, .card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+article h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+article img.featured-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- ASIDE PROFILE (Syarat Wajib) --- */
+aside .profile-card {
+    text-align: center;
+}
+
+aside img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+aside h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+aside .bio {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.info-table {
+    width: 100%;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.info-table td {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-table td:first-child {
+    font-weight: bold;
+    color: var(--primary-color);
+    width: 80px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* --- RESPONSIVE DESIGN (Syarat Nilai Tinggi) --- */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    /* Stack layout pada mobile */
+    main {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        order: -1; /* Opsional: Pindahkan profil ke atas pada mobile */
+    }
+    
+    nav a.dicoding-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
