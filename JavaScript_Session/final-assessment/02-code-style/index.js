@@ -1,4 +1,4 @@
-const books = { }
+const books = {}
 
 function getBooks() {
   return books;
