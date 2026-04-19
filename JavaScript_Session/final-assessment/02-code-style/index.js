@@ -1,11 +1,11 @@
-const books = {}
+const books = {};
 
 function getBooks() {
   return books;
 }
 
 function getBookById(id) {
-  let book = books[id];
+  const book = books[id];
 
   if (!book) {
     return null;
