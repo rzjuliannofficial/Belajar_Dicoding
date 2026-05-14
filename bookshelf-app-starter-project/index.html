@@ -7,6 +7,7 @@
 
     <!-- Impor script kamu di sini -->
     <!-- Lampirkan `defer` jika pemanggilan dilakukan dalam <head> -->
+    <link rel="stylesheet" href="index.css" />
     <script defer src="main.js"></script>
   </head>
   <body>
@@ -16,27 +17,27 @@
 
     <main>
       <section>
-        <h2>Tambah Buku Baru</h2>
+        <h2 id="formHeader">Tambah Buku Baru</h2>
         <form id="bookForm" data-testid="bookForm">
-          <div>
+          <div class="form-group">
             <label for="bookFormTitle">Judul</label>
-            <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" />
+            <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" placeholder="Contoh: Harry Potter" />
           </div>
-          <div>
+          <div class="form-group">
             <label for="bookFormAuthor">Penulis</label>
-            <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" />
+            <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" placeholder="Contoh: J.K. Rowling" />
           </div>
-          <div>
+          <div class="form-group">
             <label for="bookFormYear">Tahun</label>
-            <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" />
+            <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" placeholder="Contoh: 1997" />
           </div>
-          <div>
-            <label for="bookFormIsComplete">Selesai dibaca</label>
+          <div class="form-group checkbox-group" style="flex-direction: row; align-items: center; gap: 10px;">
             <input
               id="bookFormIsComplete"
               type="checkbox"
               data-testid="bookFormIsCompleteCheckbox"
             />
+            <label for="bookFormIsComplete" style="margin-bottom: 0;">Selesai dibaca</label>
           </div>
           <button id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton">
             Masukkan Buku ke rak <span>Belum selesai dibaca</span>
@@ -47,8 +48,10 @@
       <section>
         <h2>Cari Buku</h2>
         <form id="searchBook" data-testid="searchBookForm">
-          <label for="searchBookTitle">Judul</label>
-          <input id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput" />
+          <div class="form-group">
+            <label for="searchBookTitle">Judul</label>
+            <input id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput" placeholder="Ketik judul buku..." />
+          </div>
           <button id="searchSubmit" type="submit" data-testid="searchBookFormSubmitButton">
             Cari
           </button>
@@ -57,43 +60,15 @@
 
       <section>
         <h2>Belum selesai dibaca</h2>
-
-        <div id="incompleteBookList" data-testid="incompleteBookList">
-          <!-- 
-            Ini adalah struktur HTML untuk masing-masing buku.
-            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
-          -->
-          <div data-bookid="123123123" data-testid="bookItem">
-            <h3 data-testid="bookItemTitle">Judul Buku 1</h3>
-            <p data-testid="bookItemAuthor">Penulis: Penulis Buku 1</p>
-            <p data-testid="bookItemYear">Tahun: 2030</p>
-            <div>
-              <button data-testid="bookItemIsCompleteButton">Selesai dibaca</button>
-              <button data-testid="bookItemDeleteButton">Hapus Buku</button>
-              <button data-testid="bookItemEditButton">Edit Buku</button>
-            </div>
-          </div>
+        <div id="incompleteBookList" data-testid="incompleteBookList" class="book-list">
+          <!-- Data buku akan muncul di sini -->
         </div>
       </section>
 
       <section>
         <h2>Selesai dibaca</h2>
-
-        <div id="completeBookList" data-testid="completeBookList">
-          <!-- 
-            Ini adalah struktur HTML untuk masing-masing buku.
-            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
-          -->
-          <div data-bookid="456456456" data-testid="bookItem">
-            <h3 data-testid="bookItemTitle">Judul Buku 2</h3>
-            <p data-testid="bookItemAuthor">Penulis: Penulis Buku 2</p>
-            <p data-testid="bookItemYear">Tahun: 2030</p>
-            <div>
-              <button data-testid="bookItemIsCompleteButton">Selesai dibaca</button>
-              <button data-testid="bookItemDeleteButton">Hapus Buku</button>
-              <button data-testid="bookItemEditButton">Edit Buku</button>
-            </div>
-          </div>
+        <div id="completeBookList" data-testid="completeBookList" class="book-list">
+          <!-- Data buku akan muncul di sini -->
         </div>
       </section>
     </main>
